@@ -9,7 +9,7 @@ public class UsuarioTest {
     private Usuario usuario;
 
     @BeforeEach
-    void SetUp(){
+    void setUp(){
         usuario = new Usuario("GT","Bruno");
     }
 

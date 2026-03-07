@@ -24,7 +24,7 @@ public class ComunidadeTest {
     }
 
     @Test
-    void controi(){
+    void constroi(){
         List<String> esperado = List.of("GT", "JH", "TT");
         assertEquals(esperado, comunidade.apelidosMembros());
     }
@@ -36,7 +36,7 @@ public class ComunidadeTest {
         assertEquals(esperado, comunidade.apelidosMembros());
     }
     @Test
-    void adicionaDoisMembro(){
+    void adicionaDoisMembros(){
         Usuario usuario4 = new Usuario("MF", "Manu");
         Usuario usuario5 = new Usuario("BB", "Bibica");
         comunidade.adicionaMembro(usuario4);

@@ -21,32 +21,32 @@ public class JogoTest {
     void constroi(){
         assertEquals(0, jogo.getId());
         assertEquals("Brawl Stars", jogo.getNome());
-        assertEquals(0, jogo.media());
+        assertEquals(0, jogo.media(), DELTA);
     }
 
     @Test
     void avaliaUmaVez (){
-        jogo.avalia("GT", 3);
+        jogo.avalia(usuario1.getApelido(), 3);
 
-        assertTrue(jogo.avaliado("GT"));
-        assertFalse(jogo.avaliado("JH"));
-        assertEquals(3, jogo.media());
+        assertTrue(jogo.avaliado(usuario1.getApelido()));
+        assertFalse(jogo.avaliado(usuario2.getApelido()));
+        assertEquals(3, jogo.media(), DELTA);
     }
 
     @Test
     void avaliaDuasVezes(){
-        jogo.avalia("GT", 3);
-        jogo.avalia("JH", 4);
-        assertTrue(jogo.avaliado("GT"));
-        assertTrue(jogo.avaliado("JH"));
-        assertEquals(3.5, jogo.media());
+        jogo.avalia(usuario1.getApelido(), 3);
+        jogo.avalia(usuario2.getApelido(), 4);
+        assertTrue(jogo.avaliado(usuario1.getApelido()));
+        assertTrue(jogo.avaliado(usuario2.getApelido()));
+        assertEquals(3.5, jogo.media(), DELTA);
     }
 
     @Test
     void avaliaTresVezes(){
-        jogo.avalia("GT", 3);
-        jogo.avalia("JH", 4);
-        jogo.avalia("GT", 5);
-        assertEquals(4.5, jogo.media());
+        jogo.avalia(usuario1.getApelido(), 3);
+        jogo.avalia(usuario2.getApelido(), 4);
+        jogo.avalia(usuario1.getApelido(), 5);
+        assertEquals(4.5, jogo.media(), DELTA);
     }
 }

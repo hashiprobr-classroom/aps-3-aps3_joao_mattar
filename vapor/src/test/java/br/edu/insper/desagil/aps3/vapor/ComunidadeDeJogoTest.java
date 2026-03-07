@@ -10,17 +10,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ComunidadeDeJogoTest {
 
-    private Comunidade comunidade;
+    private ComunidadeDeJogo comunidade;
     private Usuario usuario1;
     private Usuario usuario2;
-    private Usuario usuario3;
     private Jogo jogo;
 
     @BeforeEach
     void setUp(){
         usuario1 = new Usuario("TT", "Thais");
         usuario2 = new Usuario("MF", "Manu");
-        usuario3 = new Usuario("BB", "Bibica");
         jogo = new Jogo(1, "Brawl Stars");
         comunidade = new ComunidadeDeJogo(new ArrayList<>(List.of()), jogo);
     }
@@ -34,9 +32,9 @@ public class ComunidadeDeJogoTest {
     }
     @Test
     void adicionaUmInvalidoUmValido(){
+        comunidade.adicionaMembro(usuario2);
         jogo.avalia(usuario1.getApelido(),10);
         comunidade.adicionaMembro(usuario1);
-        comunidade.adicionaMembro(usuario2);
         List<String> esperado = List.of("TT");
         assertEquals(esperado, comunidade.apelidosMembros());
     }
