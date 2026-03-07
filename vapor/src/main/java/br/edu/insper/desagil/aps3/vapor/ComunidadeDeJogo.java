@@ -9,9 +9,6 @@ public class ComunidadeDeJogo extends Comunidade{
         super(membros);
         this.jogo = jogo;
     }
-    public Jogo getJogo() {
-        return jogo;
-    }
     @Override
     public void adicionaMembro(Usuario usuario){
         String apelido = usuario.getApelido();

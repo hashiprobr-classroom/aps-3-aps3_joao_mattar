@@ -14,8 +14,8 @@ public class Loja {
     public Usuario getDono(){
         return dono;
     }
-    public int numeroAvaliados(Usuario usario){
-        String apelido = usario.getApelido();
+    public int numeroAvaliados(Usuario usuario){
+        String apelido = usuario.getApelido();
         int contador = 0;
         for(Jogo jogo: jogos){
             if (jogo.avaliado(apelido)){
